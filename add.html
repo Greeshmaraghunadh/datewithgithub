@@ -1,0 +1,81 @@
+<?php
+include("header.php");
+?>
+    <!-- ########## START: MAIN PANEL ########## -->
+    <div class="br-mainpanel">
+      <div class="pd-30" style="padding-bottom: 0px;">
+        <h4 class="tx-gray-800 mg-b-5">Company List</h4>
+      </div><!-- d-flex -->
+
+      <div class="br-pagebody mg-t-5 pd-x-30">
+
+        <div class="row row-sm">
+          <div class="col-12">
+            
+
+            <div class="card bd-0 shadow-base pd-30 mg-t-20">
+
+
+              <table class="table table-valign-middle mg-b-0">
+                <tbody>
+
+         <?php
+ include("connection.php");
+   $query2="SELECT * FROM invoice_company";
+$result=mysqli_query($con,$query2);
+while($row=mysqli_fetch_array($result))
+ {
+  $id=$row["id"];
+?>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src='<?php echo $row["logo"];?>'  class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0"><a href ='clientlist.php?id=<?php echo $id;?>'><?php echo $row["companyname"]; ?></a></h6>
+                      <span class="tx-12"><?php echo $row["email"]; ?></span>
+                    </td>
+                    
+                   
+                  </tr>
+                 
+                  
+            <?php
+            }
+            ?>  
+                 
+                </tbody>
+              </table>
+
+            </div><!-- card -->
+
+           
+
+
+          </div><!-- col-9 -->
+          
+        </div><!-- row -->
+
+      </div><!-- br-pagebody -->
+
+    </div><!-- br-mainpanel -->
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/popper.js/popper.js"></script>
+    <script src="lib/bootstrap/bootstrap.js"></script>
+    <script src="lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/jquery-ui/jquery-ui.js"></script>
+    <script src="lib/jquery-switchbutton/jquery.switchButton.js"></script>
+    <script src="lib/peity/jquery.peity.js"></script>
+    <script src="lib/chartist/chartist.js"></script>
+    <script src="lib/jquery.sparkline.bower/jquery.sparkline.min.js"></script>
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/rickshaw/rickshaw.min.js"></script>
+
+    <script src="js/bracket.js"></script>
+    <script src="js/ResizeSensor.js"></script>
+     <script src="js/dashboard.js"></script>
+  
+  </body>
+</html>
