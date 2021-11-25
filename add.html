@@ -19,14 +19,7 @@ include("header.php");
               <table class="table table-valign-middle mg-b-0">
                 <tbody>
 
-         <?php
- include("connection.php");
-   $query2="SELECT * FROM invoice_company";
-$result=mysqli_query($con,$query2);
-while($row=mysqli_fetch_array($result))
- {
-  $id=$row["id"];
-?>
+        
                   <tr>
                     <td class="pd-l-0-force">
                       <img src='<?php echo $row["logo"];?>'  class="wd-40 rounded-circle" alt="">
@@ -40,10 +33,7 @@ while($row=mysqli_fetch_array($result))
                   </tr>
                  
                   
-            <?php
-            }
-            ?>  
-                 
+           
                 </tbody>
               </table>
 
